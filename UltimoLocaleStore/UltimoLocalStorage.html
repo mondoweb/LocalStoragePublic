@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimo key ed value localStorage  </title>
+</head>
+<body>
+
+    <!-- 
+ 
+        /*  immettere chiave valore key : value   -> localStorage.setItem( 'nome' , 'Luca' )  */
+          localStorage.setItem( inpKey.value, inpValue.value);
+
+          /* vedere l'ultima key  in localStorage  localStorage.key(0) ->  ovviamente parte da 0 */    
+           console.log(   localStorage.key( localStorage.length- 1)     )  
+
+          /*  vedere l'ultimo Value in localStorage  localStorage.getItem(  localStorage.key(0)  )   */  
+            console.log(   localStorage.getItem(  localStorage.key( localStorage.length- 1)  )      ) 
+     -->
+    
+    <fieldset>
+        <input type="text"  id="inpKey"  placeholder="key..">
+        <input type="text"  id="inpValue"  placeholder="Value.."> 
+        <button id="btnInsert">  inserisci dati al localStorage </button>
+        <button id="cancella">  cancella </button>
+    </fieldset>
+
+    <fieldset>
+        <legend> Local Storage </legend>
+        <div id="output"> </div>
+    </fieldset>
+    
+
+    <fieldset>
+        <legend> Ultimo key value</legend>
+
+        <em id="chiave"> </em>
+      
+        <em id="valore"> </em>
+    </fieldset>
+
+    <script>
+        const inpKey = document.getElementById("inpKey");
+        const inpValue = document.getElementById("inpValue");
+        const btnInsert = document.getElementById("btnInsert");
+       
+        // const cancella = document.getElementById("cancella");
+        
+
+        btnInsert.onclick = function() {
+
+          
+          if( inpKey.value && inpValue.value){
+        localStorage.setItem( inpKey.value, inpValue.value);
+            alert( 'hai messo co successo->   key:' + inpKey.value +'Value: '+ inpValue.value)
+        //  location.reload(); -> refresh location oppure  inpValue.value = '', inpKey.value = '';
+              inpValue.value = '', inpKey.value = '';
+          }
+
+          for( let i = 0; i < localStorage.length; i++ ){
+          let key = localStorage.key(i);
+          let value = localStorage.getItem(key)
+          output.innerHTML= key + ":" + value
+             }
+
+ // 
+        /*   vedere l'ultima key  in localStorage  localStorage.key(0) ->  ovviamente parte da 0 */     console.log(   localStorage.key( localStorage.length- 1)     )  
+    chiave.innerHTML =  ' <b>  key   </b>' + localStorage.key( localStorage.length- 1) + ' : '  ;
+        /*   vedere l'ultimo Value in localStorage  localStorage.getItem(  localStorage.key(0)  )   */     console.log(   localStorage.getItem(  localStorage.key( localStorage.length- 1)  )      ) 
+    valore.textContent = '  <b> Value  </b>' + localStorage.getItem(  localStorage.key( localStorage.length- 1)  )     ;
+ // 
+        
+        }
+
+
+        cancella.onclick = function() {
+            localStorage.clear();
+            alert(' dati cancellati nel localStorage');
+        }
+
+    </script>
+</body>
+</html>

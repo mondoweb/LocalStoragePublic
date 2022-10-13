@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Local Storage </title>
+</head>
+<body>
+
+
+    <fieldset>
+        <input type="text"  id="inpKey"  placeholder="key..">
+        <input type="text"  id="inpValue"  placeholder="Value.."> 
+        <button id="btnInsert">  inserisci dati al localStorage </button>
+    </fieldset>
+
+    <fieldset>
+        <legend> Local Storage </legend>
+        <div id="output"> </div>
+    </fieldset>
+   
+    <script>
+
+        const inpKey = document.getElementById("inpKey");
+        const inpValue = document.getElementById("inpValue");
+        const btnInsert = document.getElementById("btnInsert");
+        const output = document.getElementById("output");
+
+// btnInsert.onclick = function() {  
+  btnInsert.onclick = () => {      
+  const key = inpKey.value;
+  const value = inpValue.value;
+  console.log(key);
+  console.log(value)
+
+  /* */ 
+  if( key && value ) {
+  // localStorage.getItem(key)
+   localStorage.setItem(key, value);
+   location.reload();
+}
+};
+
+for( let i = 0 ; i< localStorage.length ; i++ ) {
+  const key = localStorage.key(i);
+  const value = localStorage.getItem(key);
+  output.innerHTML += `${key} : ${value}; <br/>  `;
+}
+
+
+console.log(localStorage.key(0))
+
+// ---------------------------------
+
+/*
+let finestra;
+const locStore = () =>{ 
+           finestra  = window.open("", "Messaggio_Window", "width=200,height=100");  
+        console.log(finestra)
+          const parametro = new URLSearchParams( window.location.search);
+          console.log(parametro.setItem(finestra.name));
+};
+
+// ---------------------------------
+
+document.getElementById("close").addEventListener("click",  () => {
+   finestra.close();
+
+ } ) ;
+
+*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./modale.css">
+
+    <title>Local Storage </title>
+</head>
+<body id="background">
+    <button id="myBtn"> Apri Modale e prendere il dato in local Storage </button>
+
+<!--  Modale -->
+<div id="myModal" class="modal">
+
+  <!-- Modale -->
+  <!-- <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="paragrafo">  Luca </p>
+  </div> -->
+
+</div>
+<!--  -->
+
+    <fieldset>
+        <input type="text"  id="inp"  placeholder="Scrivi....">
+       
+        <button id="insertSave">  Salva </button>
+        <button  onclick="vedi()" >  View  </button>
+    </fieldset>
+
+    <fieldset>  
+        <legend> Local Storage </legend>
+        <div id="output"> </div>
+    </fieldset>
+
+  
+    <div style="padding-top: 4% ;">  
+        <button id="reset"> Reset </button>
+    </div>
+
+    <script >
+
+
+    </script>
+
+<script src="./mainLocalStorage.js"></script>
+    <script src="./modale.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+  /* 
+   immettere chiave valore key : value   ->   localStorage.setItem( 'nome' , 'Luca' )  */
+          localStorage.setItem( inpKey.value, inpValue.value);
+
+          /* vedere l'ultima key  in localStorage  localStorage.key(0) ->  ovviamente parte da 0 */    
+           console.log(   localStorage.key( localStorage.length- 1)     )  
+
+          /*  vedere l'ultimo Value in localStorage  localStorage.getItem(  localStorage.key(0)  )   */  
+            console.log(   localStorage.getItem(  localStorage.key( localStorage.length- 1)  )      ) 
+
+
+
+            Vedere anche PostMessage  -> PostMessage
